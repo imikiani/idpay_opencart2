@@ -82,7 +82,7 @@ class ControllerPaymentIDPay extends Controller
 			$data['error_warning'] = $this->language->get('error_curl');
 		}
 
-		return $this->load->view('default/template/payment/idpay.tpl', $data);
+		return $this->load->view('payment/idpay.tpl', $data);
 
 	}
 
@@ -220,7 +220,7 @@ class ControllerPaymentIDPay extends Controller
         $data['header'] = $this->load->controller('common/header');
         $data['footer'] = $this->load->controller('common/footer');
 
-        $this->response->setOutput($this->load->view('default/template/payment/idpay_callback.tpl', $data));
+        $this->response->setOutput($this->load->view('payment/idpay_callback.tpl', $data));
 	}
 
     private function idpay_get_success_message($track_id, $order_id)
